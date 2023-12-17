@@ -1,0 +1,830 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" inline="true" deletable="false" x="0" y="0">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="80" w="160">super cool op mode yes yes yes
+
+if you see this you get 49 cents rounded to the nearest whole number</comment>
+<data>{"commentPositionLeft":277,"commentPositionTop":-7}</data>
+<statement name="STACK">
+<block type="linearOpMode_waitForStart" id="MG#gwi`J18H+XDqZZng:">
+<next>
+<block type="dcMotor_setProperty_Direction" id="@TyqbY0Z?vQzxJL!zs%v">
+<field name="IDENTIFIER">leftmotor0AsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"leftmotor0"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="^QB)fCLUdCc;GN9tn.A2">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="M~_o3C9=Q0;@E*`RqOOz">
+<field name="IDENTIFIER">topleftmotor2AsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"topleftmotor2"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="tmim;o3#H8Ud+[!BVA[)">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="je@.1%Cm;Z-R1(=`|DXz">
+<field name="IDENTIFIER">drone5AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"drone5"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="t_0=B,x/`G72sP`h+e.m">
+<field name="NUM">0.2</field>
+</shadow>
+</value>
+<next>
+<block type="controls_whileUntil" id="$^hb9c@MZNf(0kU%1u2n">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="linearOpMode_opModeIsActive" id="~9|BQud{~M;j9ozvn{Jz"/>
+</value>
+<statement name="DO">
+<block type="procedures_callnoreturn" id="7pEI^Na.D5s|{S?-B$AO">
+<mutation name="forward"/>
+<next>
+<block type="procedures_callnoreturn" id=";+]6Tc5#j$Y]585yK=5:">
+<mutation name="backward"/>
+<next>
+<block type="procedures_callnoreturn" id="}FJRxJS)t/hPd$UfJni?">
+<mutation name="turn"/>
+<next>
+<block type="procedures_callnoreturn" id="d{OmK`,DCTfcB_^VZqj=">
+<mutation name="slyde"/>
+<next>
+<block type="procedures_callnoreturn" id="/%9nVLjlcEi7O!t%Iq^q">
+<mutation name="Arm"/>
+<next>
+<block type="procedures_callnoreturn" id="XNexQQbG.S4KZG8PadVo">
+<mutation name="Linearact"/>
+<next>
+<block type="procedures_callnoreturn" id="_tR$[8Ay{dK6Hfa,ELT!">
+<mutation name="finger"/>
+<next>
+<block type="procedures_callnoreturn" id="=inV3Htsr4Hq-}iTA]kO">
+<mutation name="claw2"/>
+<next>
+<block type="procedures_callnoreturn" id="$|BFC.0@B-N8/x-%%[4?">
+<mutation name="droneLaunch"/>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="_.KX!3I=x!:-RqP~/?8K" x="0" y="435">
+<field name="NAME">droneLaunch</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_if" id="u{*5O|j%XdO10t=t9]J:">
+<mutation else="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="CmZzjlN(+q!CvhT!-4Bf">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">A</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="servo_setProperty_Number" id="h@35d-c0GQ7l_zOOubc,">
+<field name="IDENTIFIER">drone5AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"drone5"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="k@B:WYyN[XNbEi|9m4YF">
+<field name="NUM">-0.3</field>
+</shadow>
+</value>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="servo_setProperty_Number" id="`|cvy%Mz,tCbA|5K(,C4">
+<field name="IDENTIFIER">drone5AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"drone5"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="-l~Ll,4Yn3ol/KPq9Om2">
+<field name="NUM">0.2</field>
+</shadow>
+</value>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="!wngg2V?x;T4mSGD|yx%" x="0" y="606">
+<field name="NAME">finger</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_if" id="^[E|$fME4iOx2sTBi^;~">
+<mutation elseif="1" else="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="!-)b3q8[X?fR:VJt,}q.">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">A</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="servo_setProperty_Number" id="rmv`K8lzfta$_:OQu,3N">
+<field name="IDENTIFIER">ClawServo1AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ClawServo1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="!77OMJUi2.pdhw1{qXj1">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id="-BNwK0[MLrr`=misNUxL">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">B</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO1">
+<block type="servo_setProperty_Number" id="[Y;u52xayWiyE|i/A2mj">
+<field name="IDENTIFIER">ClawServo1AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ClawServo1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Uo#!)?6I]F:8r=Rt?ffn">
+<field name="NUM">0.65</field>
+</shadow>
+</value>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="servo_setProperty_Number" id="n~ZVTGMnK-X-#23fps|?">
+<field name="IDENTIFIER">ClawServo1AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ClawServo1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="6vYvi(~y(Pqy+p$bzQ8d">
+<field name="NUM">0.5</field>
+</shadow>
+</value>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="+=.yDxl~Etmem6l8hV]P" x="0" y="832">
+<field name="NAME">backward</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="=;i![`=laApvfvnF$bcH">
+<field name="IDENTIFIER">rightmotor1AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"rightmotor1"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">0</field>
+</shadow>
+<block type="math_arithmetic" id="zk%a]zvnPsLw_|Y/Kf[g">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="qL{03|p?*T3YUy#L9zZn">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftTrigger</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="~gSU*U?u~L%W(**D(2vA">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="#HO{PTC*c3PULO`VYTU#">
+<field name="IDENTIFIER">leftmotor0AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"leftmotor0"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="]yU+m!|LxKn`Zv/=ABCB">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="j1YMk;bn~D}-;/Q2hliW">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftTrigger</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="$e8mwpT$`x;C7wy?J%Q~">
+<field name="NUM">-0.9</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="egip^`QXQ.O}aZUvr/9f">
+<field name="IDENTIFIER">topleftmotor2AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"topleftmotor2"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="UY8ZJ8Lam3H9T+?9S~Ts">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="[i0JD-d3%+*d}Jr:Wx6D">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftTrigger</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="$Byx-n(3*i($?`a4GM)-">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="$}th,XY89h}_0D;Lu-aV">
+<field name="IDENTIFIER">toprightmotor3AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"toprightmotor3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="T[k7i8qHHf_a[7us4jZI">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="NF8M[zl~gi679YM@?-q7">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="K}Mt:C1RAp=9.#8]3nLd">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftTrigger</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="B4+;yp0}T$qkV08`m-Og">
+<field name="NUM">-0.9</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="nf!7)HVN?8uef%AaTHsT" x="0" y="1046">
+<field name="NAME">claw2</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_if" id="h,Ks4GOF2za`N}nsPbYe">
+<mutation elseif="1" else="1"/>
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="od-xVPHx|Gen_r2_)_eq">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">X</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="servo_setProperty_Number" id="yS*dt*$p,3%ij+`lR0XQ">
+<field name="IDENTIFIER">ClawServo0AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ClawServo0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="osO!^5x10QnyvIAvK6vy">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</statement>
+<value name="IF1">
+<block type="gamepad_getProperty_Boolean" id=";oC;0bktWDXe+)j4M,f-">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">Y</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<statement name="DO1">
+<block type="servo_setProperty_Number" id="7Z[~$~k_U|EoBnQSw^+;">
+<field name="IDENTIFIER">ClawServo0AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ClawServo0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id=".1PaD::;g9?4o2w}%rR`">
+<field name="NUM">0.57</field>
+</shadow>
+</value>
+</block>
+</statement>
+<statement name="ELSE">
+<block type="servo_setProperty_Number" id="bB}J%Ev;!of#-[*8naQu">
+<field name="IDENTIFIER">ClawServo0AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"ClawServo0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="G)44h!%U?T{3jcU}HT-[">
+<field name="NUM">0.5</field>
+</shadow>
+</value>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="2[]2]DC4O(w#1VOwj!/3" x="0" y="1272">
+<field name="NAME">forward</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="Snz-.bQ.*ki??lKtW`vl">
+<field name="IDENTIFIER">rightmotor1AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"rightmotor1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="{;u!ZKdn}dwRMn~`ZPCS">
+<field name="NUM">0</field>
+</shadow>
+<block type="math_arithmetic" id="tcCh%)M$pHB=RAf3s4|%">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number" id="@RDT539AiNQjZ)-Z`#1r">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id=";I=u}^a*r,ZbXrX29NOp">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightTrigger</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="l0-bm_v:F3~?~Jlln_C[">
+<field name="NUM">0.33333</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="VZbs%I-8]NXY4YYvV9f?">
+<field name="IDENTIFIER">leftmotor0AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"leftmotor0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="-D32eKT2@7-jD6[)y3yD">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="$Q7YUrxcG57Mt7%gS259">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="!;ic?!75T|4]3L`zfR}i">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightTrigger</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="J^ClmeL.N%0}VMk;`6W4">
+<field name="NUM">0.1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="](Cy_WX-vOXDjP|aRTZw">
+<field name="IDENTIFIER">topleftmotor2AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"topleftmotor2"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="2FN(sSGcFaqAA1g0xxhf">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="0nNL=:9@K07|2C51knwT">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightTrigger</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="Ym@TXe@nQLW@TZCZb-7h">
+<field name="NUM">0.1</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="NRV2$Js`I/o1Gm6_mg.8">
+<field name="IDENTIFIER">toprightmotor3AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"toprightmotor3"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="9j62Riww3yQ|+Ev%yn0_">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="PIjYw[T4+E;H_~q8tXO,">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightTrigger</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="OquR[pbal)8_,7BlQ3X9">
+<field name="NUM">0.33333</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="CF6D)VG_8Ewq,1t$3!C6" x="0" y="1486">
+<field name="NAME">slyde</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<data>{"commentPositionLeft":-40,"commentPositionTop":-105}</data>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="XiF(zIXKpi!zx$m.60f|">
+<field name="IDENTIFIER">rightmotor1AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"rightmotor1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="[[L|zy1IwUA]b1@h`U_?">
+<field name="NUM">0</field>
+</shadow>
+<block type="math_arithmetic" id="Y77t_6Q^IN]zW;1yH|G`">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="ef$rroGb/G7^%=Sy0A}R">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="e]^^6TA!ULBXM4GW#G1*">
+<field name="NUM">0.7</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="a*zb=Gc^4V;s!kTdJYzx">
+<field name="IDENTIFIER">leftmotor0AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"leftmotor0"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="i3DK[KWqk9$*.l;h{dj_">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="[4e^l=CR;]D6,G0{^x)H">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="6Cc8ZBf!g}xh7sAbZb(#">
+<field name="NUM">-0.8</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="|3wKZ)jZMUrGC`3V`jOr">
+<field name="IDENTIFIER">topleftmotor2AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"topleftmotor2"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="J7EO?,1khLf8WPa:;[P(">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="%o+4%xu9l]dBz^a{jNB2">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="*nGj3slH#sO7[d.hbTz;">
+<field name="NUM">-0.8</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="UUjw.sEvsF]#tHPe0dLQ">
+<field name="IDENTIFIER">toprightmotor3AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"toprightmotor3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id=":!7HB*rZUUC_X:$Ma,zg">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="v^mO#I2EZWyFlsW4FrK5">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="9Op4S7)(87-QRwxOzJ2U">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">RightStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="yUj@4@WoOjj+Tjz}AE0X">
+<field name="NUM">0.7</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="0Pg:c$UGhR-.]kUX~b~`" x="0" y="1700">
+<field name="NAME">Linearact</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="xo6mDegDn61hVD)jKG4:">
+<field name="IDENTIFIER">port2AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"port 2"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="rZCVQ83;6dguAIq}L)[}">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="iy~BvIcOXmJ_ua%Z+GAw">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="2Q$*-|zcj*1m.%ch0eIu">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">RightStickY</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="}~-J;mas3[BKXR$]XrVi">
+<field name="NUM">-1</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="}J).vN_4kM?O5dxZ7zrC" x="0" y="1803">
+<field name="NAME">Arm</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="yTgD=mvYC)1MmX+[z?In">
+<field name="IDENTIFIER">port0AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"port 0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Q/nF%RBp8liC#,{h9jE2">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="!2[45YBV5;/]En`G,O6!">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="[Xi5sEL!}D6He9JKE,U.">
+<field name="IDENTIFIER">gamepad2</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad2"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="16cYa?aAykFunlzYFlEW">
+<field name="NUM">-0.5</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="b4cFu^M#W[lX1bs}BSe]" x="0" y="1906">
+<field name="NAME">turn</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="Ym1$/WC~:qbrRiOjh(b#">
+<field name="IDENTIFIER">leftmotor0AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"leftmotor0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Gj8dDy@S{}^q7{gR2_zR">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="^6.4f,+%VGjR!q=:|7g$">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="D;ct{wGNiR88wV{$`gY(">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="i+vF.21fshc)Hu%C;-Pg">
+<field name="NUM">0.8</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="7p,M!Tm|Y6YRhI^l7uX!">
+<field name="IDENTIFIER">topleftmotor2AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"topleftmotor2"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="lkV0yMlenL0at4@0T6l}">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="RDeSE%A~vn6z%MYI@oH5">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id=";YS-HRByIVH.Yqi?mNYS">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="4DYCID7fL0*TeL-=k}n_">
+<field name="NUM">-0.8</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="n]%`w!JJ*G-9PI*!@9G%">
+<field name="IDENTIFIER">toprightmotor3AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"toprightmotor3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="rG[)kSt#[18auTs9M$)@">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="zQUA_Cl{^:PwN;ODI(at">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="p7{T)|S4ufF}(ju^4$F)">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="kcX03fC*6+1}z{CEM++7">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="7yN^;NjN!7m8v.2%Kl7d">
+<field name="NUM">-0.7</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="CZ79BinfCGPUOp7+sP:m">
+<field name="IDENTIFIER">rightmotor1AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"rightmotor1"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="D|(J#(4G.XQ*P$;*%e1r">
+<field name="NUM">0</field>
+</shadow>
+<block type="math_arithmetic" id="UiEuy~6-PV68GE!~_7tc">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="|A}}o/qKn^)US]I3oCyD">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="+w4J-upcQXmh)+@Uo=zJ">
+<field name="NUM">0.7</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>
